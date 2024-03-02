@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private readonly string MouseX = "MouseX";
+    private readonly string MouseY = "MouseY";
 }
