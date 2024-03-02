@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private readonly string Horizontal = "Horizontal";
+    private readonly string Vertical = "Vertical";
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private float _speed;
+
+    private void Update()
     {
-        
+        Vector3 direction = new Vector3(Input.GetAxis(Horizontal),0f,Input.GetAxis(Vertical));
+
+        transform.Translate(_speed * direction * Time.deltaTime);
     }
 }
