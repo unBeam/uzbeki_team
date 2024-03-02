@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private float _speed;
 
     private CharacterController _characterController;
-    private float _fallSpeed = 9.8f;
+    //private float _fallSpeed = 9.8f;
     private float _time;
 
     private void Awake()
@@ -35,9 +35,10 @@ public class Movement : MonoBehaviour
 
         Vector3 moveDirection = transform.forward * vertical + transform.right * horizontal;
 
-        moveDirection.y -= 9.8f * Time.deltaTime;
+        //moveDirection.y -= 9.8f * Time.deltaTime;
         
 
         _characterController.Move(moveDirection * _speed * Time.deltaTime);
+        _characterController.SimpleMove(Vector3.forward * 0);
     }
 }
