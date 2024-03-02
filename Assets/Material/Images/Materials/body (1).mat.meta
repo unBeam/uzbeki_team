@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Material/Images/Materials/body (1).mat.meta
 guid: 2340e612b6741e841a376023eb877579
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000
+=======
+guid: 48ec186542777474bb236dff1694340c
+PrefabImporter:
+  externalObjects: {}
+>>>>>>> origin/gosharikbramch:Assets/Survival Tools/Prefabs/pills.prefab.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

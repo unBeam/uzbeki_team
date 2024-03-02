@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 26c8e13896adb3e4a9323f47e28da00f
+=======
+guid: 1b20516e34af77d4e85ebde383abfeb4
+>>>>>>> origin/gosharikbramch
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
