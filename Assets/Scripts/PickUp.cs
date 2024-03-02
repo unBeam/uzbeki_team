@@ -39,6 +39,7 @@ public class PickUp : MonoBehaviour
             transform.parent = _positionItems.transform;
             transform.localPosition = Vector3.zero;
             transform.localEulerAngles = Vector3.zero;
+
             _rigidBody.isKinematic = true;
             _onHand = true;
         }
@@ -50,6 +51,7 @@ public class PickUp : MonoBehaviour
         {
             transform.parent = null;
             _onHand = false;
+
             _rigidBody.useGravity = true;
             _rigidBody.isKinematic = false;
             _rigidBody.AddForce(_positionItems.forward * _throwForce);
