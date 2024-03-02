@@ -32,21 +32,6 @@ public class PickUp : MonoBehaviour
 
     private void PickUpItem()
     {
-        //RaycastHit hit;
-        //Debug.Log(2);
-        //if (Physics.Raycast(_raycastPoint.position, _raycastPoint.forward, out hit, _checkDistance))
-        //{
-        //    Debug.Log(3);
-        //    GameObject _item = hit.collider.GetComponent<GameObject>();
-
-        //    if (_item != null && _onHand == false)
-        //    {
-        //        _item.transform.parent = _positionItems.transform;
-        //        _item.transform.localPosition = Vector3.zero;
-        //        _item.transform.localEulerAngles = Vector3.zero;
-        //        _onHand = true;
-        //    }
-        //}
         Ray ray = Camera.main.ScreenPointToRay(_raycastPoint.forward);
 
         if (Physics.Raycast(ray, _checkDistance))
@@ -63,6 +48,7 @@ public class PickUp : MonoBehaviour
     {
         if(_onHand == true)
         {
+            transform.parent = null;
             _onHand = false;
             _rigidBody.useGravity = true;
             _rigidBody.isKinematic = false;
