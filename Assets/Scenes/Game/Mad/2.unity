@@ -14,31 +14,31 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.254717, g: 0, b: 0, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.3584906, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.9
+  m_FogDensity: 1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.44335175, g: 0.5341439, b: 0.764151, a: 1}
-  m_SkyboxMaterial: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: 0.426
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 10650, guid: 0000000000000000f000000000000000, type: 0}
+  m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 1
+  m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: NaN, g: NaN, b: NaN, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: d21864b685648064288b359eb1a89285, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &3760229434545970253
+--- !u!1001 &73609170
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -137,15 +137,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5054554451893774339, guid: 8e2ac18f56874b9418bd265954026abc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.02
+      value: 8.460621
       objectReference: {fileID: 0}
     - target: {fileID: 5054554451893774339, guid: 8e2ac18f56874b9418bd265954026abc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.16
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 5054554451893774339, guid: 8e2ac18f56874b9418bd265954026abc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.986947
+      value: 1.34344
       objectReference: {fileID: 0}
     - target: {fileID: 5054554451893774339, guid: 8e2ac18f56874b9418bd265954026abc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -184,4 +184,4 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 3760229434545970253}
+  - {fileID: 73609170}
