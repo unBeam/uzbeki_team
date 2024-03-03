@@ -13,6 +13,11 @@ public class PickUp : MonoBehaviour
     private Rigidbody _rigidBody;
     private bool _onHand;
 
+    public bool OnHand()
+    {
+        return _onHand;
+    }
+
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody>();

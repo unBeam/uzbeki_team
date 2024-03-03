@@ -4,6 +4,7 @@ public class TakePhone : MonoBehaviour
 {
     [SerializeField] private RingPhone _ring;
     [SerializeField] private Talk _talk;
+    [SerializeField] private GameObject _ringTrigger;
 
     private bool _playerOnTrigger;
 
@@ -13,6 +14,7 @@ public class TakePhone : MonoBehaviour
         {
             _ring.StopRing();
             _talk.StartTalking();
+            _ringTrigger.SetActive(false);
         }
     }
 

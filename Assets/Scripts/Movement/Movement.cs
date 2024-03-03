@@ -9,10 +9,9 @@ public class Movement : MonoBehaviour
     private readonly string Vertical = "Vertical";
 
     [SerializeField] private float _speed;
+    [SerializeField] private AudioSource _source;
 
     private CharacterController _characterController;
-    //private float _fallSpeed = 9.8f;
-    private float _time;
 
     private void Awake()
     {
@@ -31,7 +30,6 @@ public class Movement : MonoBehaviour
         //Vector3 direction = new Vector3(Input.GetAxis(Horizontal), 0f, Input.GetAxis(Vertical));
 
         //_rigidBody.MovePosition(direction * _speed * Time.fixedDeltaTime);
-
         float horizontal = Input.GetAxis(Horizontal);
         float vertical = Input.GetAxis(Vertical);
 
