@@ -10,7 +10,7 @@ public class OpenDoor : MonoBehaviour
     [SerializeField] private Image _image;
 
     private bool _keyOnHand;
-
+    private bool _isOpening;
     private void OnTriggerEnter(Collider other)
     {
         _keyOnHand = _pickUp.OnHand();
@@ -18,8 +18,9 @@ public class OpenDoor : MonoBehaviour
         if(other.gameObject.tag == "Player" && _keyOnHand == true)
         {
             _anim.OpeningDoor();
+            _isOpening = true;
         }
-        else
+        else if(_keyOnHand == false && _isOpening == false)
         {
             _image.gameObject.SetActive(true);
         }
