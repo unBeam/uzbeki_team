@@ -619,7 +619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _nextLevel: {fileID: 850945606}
-  _ECanvas: {fileID: 0}
+  _ECanvas: {fileID: 1735048945}
+  _AudioSource: {fileID: 0}
 --- !u!65 &1344133332
 BoxCollider:
   m_ObjectHideFlags: 0
