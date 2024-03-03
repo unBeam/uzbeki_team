@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class RingPhone : MonoBehaviour
@@ -9,9 +10,7 @@ public class RingPhone : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            _ringPhone.Play();
-            _light.Light();
-            _triggerPhone.gameObject.SetActive(true);  
+            StartCoroutine(RingingPhone());
         }
     }
 
@@ -19,5 +18,14 @@ public class RingPhone : MonoBehaviour
     {
         _ringPhone.Stop();
         _light.StopLight();
+    }
+
+    IEnumerator RingingPhone()
+    {
+        yield return new WaitForSeconds(3);
+        _ringPhone.Play();
+        _light.Light();
+        _triggerPhone.gameObject.SetActive(true);
+
     }
 }
