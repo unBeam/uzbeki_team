@@ -9,7 +9,7 @@ public class PickUp : MonoBehaviour
     [SerializeField] private Transform _raycastPoint;
     [SerializeField] private Transform _positionItems;
     [SerializeField] private float _throwForce;
-
+    [SerializeField] private Transform _camera;
     private Rigidbody _rigidBody;
     private bool _onHand;
 
@@ -20,11 +20,12 @@ public class PickUp : MonoBehaviour
 
     void Start()
     {
-        _rigidBody = GetComponent<Rigidbody>();
+        //_rigidBody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        Debug.DrawRay(_camera.position, _camera.forward * _checkDistance, Color.yellow);
         if (Input.GetKeyDown(KeyCode.E))
         {
             PickUpItem();
@@ -37,16 +38,23 @@ public class PickUp : MonoBehaviour
 
     private void PickUpItem()
     {
-        Ray ray = Camera.main.ScreenPointToRay(_raycastPoint.forward);
-
-        if (Physics.Raycast(ray, _checkDistance))
+        Debug.Log("НАЧАЛО");
+        RaycastHit hit;
+        if (Physics.Raycast(_camera.position,_camera.forward, out hit, _checkDistance))
         {
-            transform.parent = _positionItems.transform;
-            transform.localPosition = Vector3.zero;
-            transform.localEulerAngles = Vector3.zero;
+            Debug.Log("попали");
+            PickUpItems item = hit.collider.GetComponent<PickUpItems>();
+            if (item != null)
+            {
+                Debug.Log("взяли");
+                _rigidBody = item.GetComponent<Rigidbody>();
+                item.transform.parent = _positionItems.transform;
+                item.transform.localPosition = Vector3.zero;
+                item.transform.localEulerAngles = Vector3.zero;
 
-            _rigidBody.isKinematic = true;
-            _onHand = true;
+                _rigidBody.isKinematic = true;
+                _onHand = true;
+            }
         }
     }
 
