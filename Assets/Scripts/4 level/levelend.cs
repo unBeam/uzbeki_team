@@ -10,7 +10,7 @@ public class levelend : MonoBehaviour
 
     private void Update()
     {
-        if(_isTrigger == true && Input.GetKeyDown("e"))
+        if(_isTrigger == true)
         {
             _nextLevel.ChangeLevel();
         }
