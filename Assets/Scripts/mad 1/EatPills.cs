@@ -7,6 +7,7 @@ public class EatPills : MonoBehaviour
 {
     [SerializeField] NextLevel _nextLevel;
     [SerializeField] AnimDoor _anim;
+    [SerializeField] Canvas _ECanvas;
 
     private bool _zonePills;
     private void Update()
@@ -15,12 +16,14 @@ public class EatPills : MonoBehaviour
         {
             _anim.OpeningDoor();
             StartCoroutine(NextLevel());
+            _ECanvas.gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         _zonePills = true;
+        _ECanvas.gameObject.SetActive(true);
     }
 
     IEnumerator NextLevel()

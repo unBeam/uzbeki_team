@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelEnd : MonoBehaviour
 {
     [SerializeField] private NextLevel _nextLevel;
+    [SerializeField] private Canvas _ECanvas;
 
     private bool _hasPlayer;
 
@@ -18,6 +19,7 @@ public class LevelEnd : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        _ECanvas.gameObject.SetActive(true);
         _hasPlayer = true;
     }
 }

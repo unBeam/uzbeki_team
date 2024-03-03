@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
     private readonly string Vertical = "Vertical";
 
     [SerializeField] private float _speed;
-    [SerializeField] private AudioSource _source;
+    [SerializeField] private AudioSource _steps;
 
     private CharacterController _characterController;
 
@@ -20,6 +20,17 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.S))
+        {
+            if (_steps.isPlaying == false)
+            {
+                _steps.Play();
+            }
+        }
+        else
+        {
+            _steps.Stop();
+        }
         _characterController.SimpleMove(Vector3 .forward * 0);
         Move();
     }

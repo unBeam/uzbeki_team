@@ -5,6 +5,7 @@ public class TakePhone : MonoBehaviour
     [SerializeField] private RingPhone _ring;
     [SerializeField] private Talk _talk;
     [SerializeField] private GameObject _ringTrigger;
+    [SerializeField] private Canvas _ECanvas;
 
     private bool _playerOnTrigger;
 
@@ -15,6 +16,7 @@ public class TakePhone : MonoBehaviour
             _ring.StopRing();
             _talk.StartTalking();
             _ringTrigger.SetActive(false);
+            _ECanvas.gameObject.SetActive(false);
         }
     }
 
@@ -22,6 +24,7 @@ public class TakePhone : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            _ECanvas.gameObject.SetActive(true);
             _playerOnTrigger = true;
         }
     }
