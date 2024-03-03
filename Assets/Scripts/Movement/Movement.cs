@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Movement : MonoBehaviour
 {
@@ -19,8 +20,9 @@ public class Movement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        _characterController.SimpleMove(Vector3 .forward * 0);
         Move();
     }
 
@@ -39,6 +41,5 @@ public class Movement : MonoBehaviour
         
 
         _characterController.Move(moveDirection * _speed * Time.deltaTime);
-        _characterController.SimpleMove(Vector3.forward * 0);
     }
 }
