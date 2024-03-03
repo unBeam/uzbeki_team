@@ -16,7 +16,6 @@ public class Movement : MonoBehaviour
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
-
     }
 
     private void Update()
@@ -27,16 +26,12 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
-        //Vector3 direction = new Vector3(Input.GetAxis(Horizontal), 0f, Input.GetAxis(Vertical));
-
-        //_rigidBody.MovePosition(direction * _speed * Time.fixedDeltaTime);
         float horizontal = Input.GetAxis(Horizontal);
         float vertical = Input.GetAxis(Vertical);
 
-        Vector3 moveDirection = transform.forward * vertical + transform.right * horizontal;
 
-        //moveDirection.y -= 9.8f * Time.deltaTime;
-        
+
+        Vector3 moveDirection = transform.forward * vertical + transform.right * horizontal;
 
         _characterController.Move(moveDirection * _speed * Time.deltaTime);
     }
