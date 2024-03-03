@@ -6,6 +6,7 @@ public class LevelEnd : MonoBehaviour
 {
     [SerializeField] private NextLevel _nextLevel;
     [SerializeField] private Canvas _ECanvas;
+    [SerializeField] private AudioSource _AudioSource;
 
     private bool _hasPlayer;
 
@@ -13,7 +14,7 @@ public class LevelEnd : MonoBehaviour
     {
         if (_hasPlayer == true && Input.GetKeyDown(KeyCode.E))
         {
-            _nextLevel.ChangeLevel();
+            StartCoroutine(SoundPlay());
         }
     }
 
@@ -21,5 +22,12 @@ public class LevelEnd : MonoBehaviour
     {
         _ECanvas.gameObject.SetActive(true);
         _hasPlayer = true;
+    }
+
+    IEnumerator SoundPlay()
+    {
+        _AudioSource.Play();
+        yield return new WaitForSeconds(2);
+        _nextLevel.ChangeLevel();
     }
 }
